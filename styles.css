@@ -1,0 +1,65 @@
+/* General body styles */
+body {
+    font-family: Arial, sans-serif; /* This can be changed to your preferred font */
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: #F5D1DA;
+    color: #000000; /* Dark text for light mode, adjust for dark mode */
+}
+
+/* Header styles */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #F5D1DA;
+    padding: 0 20px;
+}
+
+.logo img {
+    height: 60px; /* Adjust as necessary */
+}
+
+nav {
+    background-color: #ffffff; /* White background by default */
+    border-radius: 5px; /* Optional for rounded corners */
+}
+
+nav ul {
+    display: flex;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+nav ul li a {
+    display: block;
+    padding: 10px 20px;
+    color: #333; /* Dark text on light background */
+    text-decoration: none;
+    transition: background-color 0.3s ease-in-out;
+}
+
+nav ul li a:hover,
+nav ul li a:focus {
+    background-color: #951D6F; /* Dark pink on hover/focus */
+    color: #ffffff; /* White text on hover/focus */
+}
+
+.theme-toggle-container {
+    flex-grow: 1;
+    text-align: center; /* Center the toggle button if there's space */
+}
+
+button#theme-toggle {
+    border: none;
+    background: none;
+    cursor: pointer;
+}
+
+button#theme-toggle svg {
+    fill: currentColor; /* Use text color */
+    width: 24px; /* Set size of icons */
+    height: 24px;
+}

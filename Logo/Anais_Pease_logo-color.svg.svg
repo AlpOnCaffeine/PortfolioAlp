@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 183.6 206.65">
+  <defs>
+    <style>
+      .cls-1, .cls-2 {
+        fill: #d19ac6;
+      }
+
+      .cls-3 {
+        fill: #290a38;
+      }
+
+      .cls-4 {
+        fill: #6a69b0;
+      }
+
+      .cls-2 {
+        font-family: Montserrat-Regular, Montserrat;
+        font-size: 66.45px;
+      }
+
+      .cls-5 {
+        fill: #280e37;
+      }
+    </style>
+  </defs>
+  <g id="Layer_1" data-name="Layer 1">
+    <path class="cls-4" d="M175.42,160.79l-75.13,43.64c-5.08,2.95-11.35,2.97-16.45.04L8.49,161.23c-5.1-2.92-8.25-8.35-8.26-14.22L0,60.13c-.02-5.88,3.11-11.31,8.19-14.26L83.31,2.23c5.08-2.95,11.35-2.97,16.45-.04l75.35,43.24c5.1,2.92,8.25,8.35,8.26,14.22l.23,86.88c.02,5.88-3.11,11.31-8.19,14.26Z"/>
+    <path class="cls-3" d="M162.11,153.15l-61.86,35.93c-5.08,2.95-11.35,2.97-16.45.04l-62.05-35.61c-5.1-2.92-8.25-8.35-8.26-14.22l-.19-71.54c-.02-5.88,3.11-11.31,8.19-14.26l61.86-35.93c5.08-2.95,11.35-2.97,16.45-.04l62.05,35.61c5.1,2.92,8.25,8.35,8.26,14.22l.19,71.54c.02,5.88-3.11,11.31-8.19,14.26Z"/>
+  </g>
+  <g id="alp">
+    <g id="ALP">
+      <text class="cls-2" transform="translate(25.39 126.91) scale(1.05 1)"><tspan x="0" y="0">ALP</tspan></text>
+    </g>
+    <g id="PinkCircles">
+      <circle class="cls-1" cx="29.32" cy="125.28" r="5.02"/>
+      <circle class="cls-1" cx="50.25" cy="77.59" r="5.02"/>
+      <circle class="cls-1" cx="71.81" cy="124.83" r="5.02"/>
+      <circle class="cls-1" cx="86.02" cy="79.68" r="5.02"/>
+      <circle class="cls-1" cx="112.88" cy="124.23" r="5.02"/>
+      <circle class="cls-1" cx="126.98" cy="124.23" r="5.02"/>
+    </g>
+    <circle class="cls-5" cx="50.25" cy="77.59" r="3.16"/>
+    <circle class="cls-5" cx="86.02" cy="79.68" r="3.16"/>
+    <circle class="cls-5" cx="71.81" cy="125.28" r="3.16"/>
+    <circle class="cls-5" cx="112.88" cy="124.23" r="3.16"/>
+    <circle class="cls-5" cx="126.98" cy="124.23" r="3.16"/>
+    <circle class="cls-5" cx="29.32" cy="125.28" r="3.16"/>
+  </g>
+</svg>
