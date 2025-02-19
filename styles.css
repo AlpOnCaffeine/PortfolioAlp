@@ -1,11 +1,13 @@
 /* General body styles */
+/* General body styles */
 body {
     font-family: Arial, sans-serif; /* This can be changed to your preferred font */
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    background-color: #F5D1DA;
-    color: #000000; /* Dark text for light mode, adjust for dark mode */
+    background-color: var(--background-color); /* Use variable for background color */
+    color: var(--text-color); /* Use variable for text color */
+    transition: background-color 0.3s ease, color 0.3s ease; /* Smooth transition for theme change */
 }
 
 /* Header styles */
@@ -13,16 +15,17 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: #F5D1DA;
+    background-color: var(--background-color); /* Use variable for background color */
     padding: 0 20px;
 }
-
+/* Logo styles */
 .logo img {
-    height: 60px; /* Adjust as necessary */
+    height: 60px;  // Make sure this is not too small or too large for your header.
 }
 
+/* Navigation styles */
 nav {
-    background-color: #ffffff; /* White background by default */
+    background-color: var(--nav-background-color); /* Use variable for background color */
     border-radius: 5px; /* Optional for rounded corners */
 }
 
@@ -36,17 +39,18 @@ nav ul {
 nav ul li a {
     display: block;
     padding: 10px 20px;
-    color: #333; /* Dark text on light background */
+    color: var(--nav-text-color); /* Use variable for text color */
     text-decoration: none;
-    transition: background-color 0.3s ease-in-out;
+    transition: background-color 0.3s ease-in-out, color 0.3s ease;
 }
 
 nav ul li a:hover,
 nav ul li a:focus {
-    background-color: #951D6F; /* Dark pink on hover/focus */
-    color: #ffffff; /* White text on hover/focus */
+    background-color: var(--nav-hover-background-color); /* Use variable for hover background color */
+    color: var(--button-hover-color); /* Use variable for text color on hover/focus */
 }
 
+/* Theme toggle button styles */
 .theme-toggle-container {
     flex-grow: 1;
     text-align: center; /* Center the toggle button if there's space */
@@ -63,3 +67,58 @@ button#theme-toggle svg {
     width: 24px; /* Set size of icons */
     height: 24px;
 }
+body, button, nav {
+    transition: background-color 0.3s ease, color 0.3s ease; /* Smooth transition for theme change */
+}
+
+/* Light mode styles (default) */
+:root {
+    --background-color: #F5D1DA; /* Light pink background */
+    --text-color: #000000; /* Black text */
+    --nav-background-color: #ffffff; /* White background for nav */
+    --nav-text-color: #333; /* Dark grey text for navigation */
+    --nav-hover-background-color: #951D6F; /* Dark pink for hover */
+}
+/* Dark mode styles */
+[data-theme="dark"] {
+    --background-color: #951D6F; /* Dark pink background */
+    --text-color: #ffffff; /* White text */
+    --nav-background-color: #484141; /* Dark grey for nav */
+    --nav-text-color: #ffffff; /* White text for navigation */
+    --nav-hover-background-color: #F5D1DA; /* Light pink for hover */
+    --button-hover-color: #000000; /* Black text on hover */
+}
+
+/* Styles for the main body content */
+.main-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Equal width columns */
+    gap: 20px; /* Space between columns */
+    padding: 20px;
+    align-items: start; /* Align items to the start of each column */
+}
+
+.text-content {
+    background-color: var(--nav-background-color); /* Using variable for consistency */
+    padding: 20px;
+    border-radius: 8px; /* Optional: adds rounded corners */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* Optional: adds shadow for a "button-like" appearance */
+}
+
+.image-content {
+    background-color: #fff; /* White background for the image placeholder */
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    display: flex;
+    justify-content: center;
+    align-items: center; /* Center image within the div */
+}
+
+.image-content img {
+    width: 100%; /* Make image fill the container */
+    max-width: 400px; /* Limiting maximum width of the image */
+    height: auto; /* Maintain aspect ratio */
+    border-radius: 8px; /* Rounded corners for the image */
+}
+

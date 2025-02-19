@@ -5,29 +5,31 @@ document.addEventListener('DOMContentLoaded', () => {
     const iconMoon = document.getElementById('icon-moon');
     const currentTheme = localStorage.getItem('theme');
 
+    // Set the initial theme and icon visibility based on saved theme or default
     if (currentTheme === 'dark') {
         document.documentElement.setAttribute('data-theme', 'dark');
-        iconMoon.style.display = 'none';
-        iconSun.style.display = 'block';
+        iconSun.style.display = 'none';
+        iconMoon.style.display = 'block';
     } else {
         document.documentElement.setAttribute('data-theme', 'light');
-        iconMoon.style.display = 'block';
-        iconSun.style.display = 'none';
+        iconSun.style.display = 'block';
+        iconMoon.style.display = 'none';
     }
 
     themeToggle.addEventListener('click', () => {
         let theme = document.documentElement.getAttribute('data-theme');
-        
+
+        // Toggle the theme and icon visibility
         if (theme === 'dark') {
             document.documentElement.setAttribute('data-theme', 'light');
             localStorage.setItem('theme', 'light');
-            iconMoon.style.display = 'block';
-            iconSun.style.display = 'none';
+            iconSun.style.display = 'block';
+            iconMoon.style.display = 'none';
         } else {
             document.documentElement.setAttribute('data-theme', 'dark');
             localStorage.setItem('theme', 'dark');
-            iconMoon.style.display = 'none';
-            iconSun.style.display = 'block';
+            iconSun.style.display = 'none';
+            iconMoon.style.display = 'block';
         }
     });
 });
