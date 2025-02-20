@@ -177,28 +177,54 @@ body, button, nav {
 /* Styles for the contact page */
 
 /* Styles for the chatbox-with-tail */
-.chatbox-with-tail {
-    position: relative; /* Needed to position the tail absolutely within */
-    background-color: #e0e0e0;
-    border-radius: 20px;
-    padding: 10px 20px;
-    max-width: 300px;
-    margin: 10px;
-    font-family: Arial, sans-serif;
-    font-size: 16px;
+.contact-container {
+    padding: 20px;
+    width: 485px;
+    height: 358px;
+    font-family: Arial, sans-serif; /* Adjust as necessary */
 }
 
-.chatbox-with-tail::after {
-    content: ''; /* Required for pseudo-elements */
-    position: absolute; /* Positions relative to the chatbox */
-    bottom: 0; /* Position at the bottom of the chatbox */
-    left: 20px; /* Position from the left edge of the chatbox */
+.chatbox {
+    position: relative;
+    background-color: #F1C6F7; /* Light purple */
+    border-radius: 20px;
+    padding: 15px;
+    max-width: 90%;
+    color: #333;
+    font-size: 16px;
+    margin-bottom: 20px;
+}
+
+.chatbox::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50px;
     width: 0;
     height: 0;
-    border: 15px solid transparent; /* Creates the tail using borders */
-    border-top-color: #e0e0e0; /* Matches the background of the chatbox */
-    border-bottom: 0; /* No border at the bottom */
-    margin-left: -5px; /* Adjustment to align properly */
-    margin-bottom: -15px; /* Pulls the tail under the chatbox */
+    border: 20px solid transparent;
+    border-top-color: #F1C6F7;
+    border-bottom: 0;
+    margin-left: -10px;
+    margin-bottom: -20px;
 }
 
+.contact-icons {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.contact-icons div {
+    align-items: center;
+    display: flex;
+}
+
+.contact-icons img {
+    width: 40px; /* Adjust size as needed */
+    margin-right: 10px;
+}
+
+span {
+    color: #FFF; /* White color for the text */
+    font-size: 14px;
+}
