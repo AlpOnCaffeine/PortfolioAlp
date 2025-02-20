@@ -126,4 +126,50 @@ body, button, nav {
     border-radius: 0; /* No rounded corners for the image */
 }
 
+/* Styles for the works page */
+.works{
+    text-align: left;
+    margin: 20px auto 20px 50px;
+}
+.work-content {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Creates two columns of equal width */
+    gap: 20px; /* Space between columns */
+    padding: 20px; /* Padding around the grid */
+    align-items: start; /* Aligns items to the start of each cell */
+    max-width: 1200px; /* Maximum width of the grid container */
+    margin: auto; /* Centers the grid in the middle of the page */
+    text-align: center;
+}
 
+.grid-item {
+    background: #f9f9f9; /* Light background color for each grid item */
+    padding: 20px; /* Padding inside each grid item */
+    border-radius: 10px; /* Rounded corners for aesthetic */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* Subtle shadow for depth */
+}
+
+.git-container img, .codepen-container img {
+    width: 100%; /* Ensures images take full width of the container */
+    height: 300px; /* Fixed height for all images */
+    object-fit: cover; /* Covers the area without distorting aspect ratio */
+    border-radius: 5px; /* Slightly rounded corners */
+}
+
+.git-container, .codepen-container {
+    margin-bottom: 20px; /* Adds bottom margin for spacing between content */
+}
+
+.image-wrapper {
+    height: 300px; /* Fixed height for all wrappers */
+    overflow: hidden; /* Hides parts of the image that overflow */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.image-wrapper img {
+    width: auto; /* Maintains aspect ratio */
+    height: 100%; /* Fits to wrapper height */
+    max-width: none; /* Overrides any max-width settings */
+}
