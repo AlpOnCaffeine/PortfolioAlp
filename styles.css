@@ -92,33 +92,35 @@ body, button, nav {
 /* Styles for the main body content */
 .main-content {
     display: grid;
-    grid-template-columns: 1fr 1fr; /* Equal width columns */
-    gap: 20px; /* Space between columns */
-    padding: 20px;
-    align-items: start; /* Align items to the start of each column */
+    grid-template-columns: 1fr 1fr; /* Two columns of equal width */
+    align-items: center; /* Vertically align content in the middle */
+    background: #484141; /* Light background for the container */
+    border-radius: 50px; /* Large border-radius to create a pill shape */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2); /* Shadow for 3D effect */
+    overflow: hidden; /* Ensures nothing spills out of the border-radius */
+    margin: 20px auto; /* Centering the grid */
+    max-width: 960px; /* Maximum width of the container */
 }
 
 .text-content {
-    background-color: var(--nav-background-color); /* Using variable for consistency */
-    padding: 20px;
-    border-radius: 8px; /* Optional: adds rounded corners */
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* Optional: adds shadow for a "button-like" appearance */
+    padding: 20px 40px; /* Padding around the text */
+    background-color: #fff; /* White background for the text area */
+    border-radius: 42px; /* Slightly smaller radius for a snug fit */
+    box-shadow: inset 0 2px 4px rgba(0,0,0,0.1); /* Inset shadow for depth */
 }
 
 .image-content {
-    background-color: #fff; /* White background for the image placeholder */
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
     display: flex;
     justify-content: center;
-    align-items: center; /* Center image within the div */
+    align-items: center;
+    background-color: transparent; /* Transparent background */
+   
 }
 
 .image-content img {
-    width: 100%; /* Make image fill the container */
-    max-width: 400px; /* Limiting maximum width of the image */
+    max-width: 100%; /* Ensures image is responsive */
     height: auto; /* Maintain aspect ratio */
-    border-radius: 8px; /* Rounded corners for the image */
+    border-radius: 0; /* No rounded corners for the image */
 }
+
 
