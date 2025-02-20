@@ -205,11 +205,20 @@ body, button, nav {
 /* Styles for the contact page */
 
 /* Styles for the chatbox-with-tail */
+main{
+    display: flex; /* Enables the use of flexbox properties */
+    align-items: center; /* Vertically center the content */
+    justify-content: center; /* Horizontally center the content */
+    padding: 20px;
+    height: 358px; /* Fixed height */
+    font-family: Arial, sans-serif; /* Adjust as necessary */
+}
 .contact-container {
+    margin: 50px auto;
     padding: 20px;
     width: 485px;
-    height: 358px;
     font-family: Arial, sans-serif; /* Adjust as necessary */
+    line-height: 1.6;
 }
 
 .chatbox {
@@ -245,6 +254,7 @@ body, button, nav {
 .contact-icons div {
     align-items: center;
     display: flex;
+    margin: 20px auto;
 }
 
 .contact-icons img {
