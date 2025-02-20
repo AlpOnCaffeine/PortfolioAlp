@@ -173,3 +173,32 @@ body, button, nav {
     height: 100%; /* Fits to wrapper height */
     max-width: none; /* Overrides any max-width settings */
 }
+
+/* Styles for the contact page */
+
+/* Styles for the chatbox-with-tail */
+.chatbox-with-tail {
+    position: relative; /* Needed to position the tail absolutely within */
+    background-color: #e0e0e0;
+    border-radius: 20px;
+    padding: 10px 20px;
+    max-width: 300px;
+    margin: 10px;
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+}
+
+.chatbox-with-tail::after {
+    content: ''; /* Required for pseudo-elements */
+    position: absolute; /* Positions relative to the chatbox */
+    bottom: 0; /* Position at the bottom of the chatbox */
+    left: 20px; /* Position from the left edge of the chatbox */
+    width: 0;
+    height: 0;
+    border: 15px solid transparent; /* Creates the tail using borders */
+    border-top-color: #e0e0e0; /* Matches the background of the chatbox */
+    border-bottom: 0; /* No border at the bottom */
+    margin-left: -5px; /* Adjustment to align properly */
+    margin-bottom: -15px; /* Pulls the tail under the chatbox */
+}
+
