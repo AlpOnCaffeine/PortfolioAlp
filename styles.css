@@ -18,6 +18,7 @@ body, .container, .content {
     grid-area: title; /* assigning the h1 to the title area */
     text-align: center; /* centering the title */ 
     letter-spacing: 2px;
+    color: rgb(245, 209, 218); 
 }
 
 .content {
@@ -116,11 +117,13 @@ body, button, nav {
 /* Light mode styles (default) */
 :root {
     --background-color: rgb(245, 209, 218); /* Light pink background */
-    --text-color: rgb(245, 209, 218); /* Black text */
+    --text-color: #333;; /* dark plum color */
     --text-content-color: #000000; /* Black text specifically for text content */
     --nav-background-color: #ffffff; /* White background for nav */
     --nav-text-color: #333; /* Dark grey text for navigation */
     --nav-hover-background-color: #951D6F; /* Dark pink for hover */
+    --button-color: #951d6f57; /* button color */
+    --button-text-color: #rgb(245, 209, 218); /* color for button text */
 }
 /* Dark mode styles */
 [data-theme="dark"] {
@@ -252,7 +255,7 @@ main{
 
 .chatbox {
     position: relative;
-    background-color: #F1C6F7; /* Light purple */
+    background-color: #d3c6f7; /* Light purple */
     border-radius: 20px;
     padding: 15px;
     max-width: 90%;
@@ -269,30 +272,79 @@ main{
     width: 0;
     height: 0;
     border: 20px solid transparent;
-    border-top-color: #F1C6F7;
+    border-top-color: #d3c6f7;
     border-bottom: 0;
     margin-left: -10px;
     margin-bottom: -20px;
 }
-
-.contact-icons {
-    display: flex;
-    justify-content: space-evenly;
-}
-
-.contact-icons div {
-    align-items: center;
-    display: flex;
+/* Styles for the form on contact page */
+form {
     margin: 20px auto;
+    padding: 20px;
+    background-color: var(--background-color); /* Uses background color based on theme */
+    color: var(--text-color); /* Uses text color based on theme */
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    max-width: 380px;
+
 }
 
-.contact-icons img {
-    width: 40px; /* Adjust size as needed */
+.form-group {
+    margin-bottom: 10px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    color: var(--text-color); /* Ensures label text follows theme */
+}
+
+input[type="text"], input[type="radio"] {
     margin-right: 10px;
 }
 
-span {
-    color: #FFF; /* White color for the text */
-    font-size: 14px;
+button {
+    padding: 10px 20px;
+    background-color: var(--nav-hover-background-color); /* Uses nav hover background color */
+    color: var(--button-hover-color); /* Uses button hover text color */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
 }
 
+button:hover {
+    background-color: var(--nav-background-color); /* Inverse of normal state for hover */
+    color: var(--nav-text-color);
+}
+
+img {
+    vertical-align: middle;
+    width: 24px; /* Adjust size as necessary */
+}
+
+/* Specific styles for handling inputs on dark mode */
+[data-theme="dark"] input[type="text"] {
+    background-color: var(--nav-background-color); /* Dark mode input background */
+    color: var(--text-color); /* Dark mode text color */
+    border: 1px solid var(--text-content-color); /* Dark mode input border */
+}
+
+[data-theme="dark"] input[type="radio"] {
+    accent-color: var(--nav-hover-background-color); /* Change radio button color in dark mode */
+}
+
+/* Styles to ensure proper visibility of form elements */
+input[type="text"] {
+    border: 1px solid #951d6f57; /* Light theme input border */
+    background-color: var(--nav-background-color); /* Ensures input background matches theme */
+    color: var(--text-color); /* Ensures text color is readable */
+}
+
+/* Adjust placeholder text color to ensure visibility across themes */
+input::placeholder {
+    color: #951d6f57;
+}

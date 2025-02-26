@@ -33,3 +33,15 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 });
+// script for the emails and phone messages
+function showContactField(method) {
+    var phoneInput = document.getElementById('phoneInput');
+    var emailInput = document.getElementById('emailInput');
+    if (method === 'phone') {
+        phoneInput.style.display = 'block';
+        emailInput.style.display = 'none';
+    } else if (method === 'email') {
+        emailInput.style.display = 'block';
+        phoneInput.style.display = 'none';
+    }
+}
