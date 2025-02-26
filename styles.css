@@ -12,6 +12,10 @@ body, .container, .content {
     overflow-x: hidden; /* Only use this if horizontal overflow needs to be hidden */
 }
 
+#Anais{
+    font-family: 'Rubik Moonrocks', cursive;
+    font-size: 2rem;
+}
 
 .content {
     flex: 1; /* Takes up all available space pushing the footer to the bottom */
