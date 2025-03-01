@@ -45,3 +45,17 @@ function showContactField(method) {
         phoneInput.style.display = 'none';
     }
 }
+
+// script for the lightbox model, which allows the image to be enlarged.
+document.querySelectorAll('.portfolio-grid .item img').forEach(item => {
+    item.addEventListener('click', function() {
+        document.getElementById('lightboxModal').style.display = "block";
+        document.getElementById('lightboxImg').src = this.src;
+        document.getElementById('caption').innerHTML = this.alt;
+    });
+});
+
+// Get the <span> element that closes the modal
+document.querySelector('.close').addEventListener('click', function() {
+    document.getElementById('lightboxModal').style.display = "none";
+});

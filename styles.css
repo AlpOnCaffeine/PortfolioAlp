@@ -119,6 +119,7 @@ body, button, nav {
     --background-color: rgb(245, 209, 218); /* Light pink background */
     --text-color: #333;; /* dark plum color */
     --text-content-color: #000000; /* Black text specifically for text content */
+    --text-content-background-color: #fcf4f6; /* off white background color     specifically for text content */
     --nav-background-color: #ffffff; /* White background for nav */
     --nav-text-color: #333; /* Dark grey text for navigation */
     --nav-hover-background-color: #951D6F; /* Dark pink for hover */
@@ -131,6 +132,7 @@ body, button, nav {
     --background-color: #951D6F; /* Dark pink background */
     --text-color: rgb(245, 209, 218); /* White text */
     --text-content-color: #000000; /* Black text for text content in dark mode */
+    --text-content-background-color: rgb(245, 209, 218); /* pink background color specifically for text-content */
     --nav-background-color: #484141; /* Dark grey for nav */
     --nav-text-color: #ffffff; /* White text for navigation */
     --nav-hover-background-color: #333; /* Light pink for hover */
@@ -367,3 +369,48 @@ input::placeholder {
     height: auto;
     display: block;
 }
+
+/* Styles for the lightbox model that allows img to be enlarged. */
+.lightbox-modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1050; /* Sit on top */
+    padding-top: 100px; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgba(0,0,0,0.9); /* Black w/ opacity */
+}
+
+.lightbox-modal .modal-content {
+    margin: auto;
+    display: block;
+    width: 80%;
+    max-width: 700px;
+}
+
+.close {
+    position: absolute;
+    top: 25px;
+    right: 35px;
+    color: #fff;
+    font-size: 40px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close:hover,
+.close:focus {
+    color: #bbb;
+    text-decoration: none;
+}
+
+#caption {
+    text-align: center;
+    color: #ccc;
+    padding: 10px 0;
+    height: 150px; /* Adjust as needed */
+}
+
