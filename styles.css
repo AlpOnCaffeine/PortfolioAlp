@@ -167,7 +167,7 @@ body, button, nav {
 .text-content {
     grid-area: text; /* Assigning the text content to the text area */
     padding: 20px; /* Padding around the text */
-    background-color: #F5D1DA; /* White background for the text area */
+    background-color: #fcf4f6; /* White background for the text area */
     border-radius: 42px; /* Slightly smaller radius for a snug fit */
     box-shadow: inset 0 2px 4px rgba(0,0,0,0.1); /* Inset shadow for depth */
     overflow: hidden;
