@@ -414,3 +414,21 @@ input::placeholder {
     height: 150px; /* Adjust as needed */
 }
 
+.portfolio-grid .item img {
+    width: 100%; /* Ensures each image takes up the full width of its container */
+    height: 200px; /* Adjust based on your design needs */
+    object-fit: cover; /* Ensures the image covers the space without distorting */
+    cursor: pointer; /* Indicates that the image can be clicked */
+}
+
+/* Styles for links within h2 tags */
+h2 a {
+    text-decoration: none; /* Removes the underline by default */
+    color: inherit; /* Inherits the color from the parent element */
+    transition: color 0.3s ease, text-decoration 0.3s ease; /* Smooth transition for color and decoration */
+}
+
+h2 a:hover, h2 a:focus {
+    text-decoration: underline; /* Adds underline on hover/focus */
+    color: #4285F4; /* Changes color on hover/focus to a distinct blue */
+}
