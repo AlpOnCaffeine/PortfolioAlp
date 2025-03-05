@@ -1,3 +1,4 @@
+/**/
 /* General body styles */
 html, body {
     height: 100%; /* Ensures the full height of the viewport is used */
@@ -116,28 +117,32 @@ body, button, nav {
 
 /* Light mode styles (default) */
 :root {
-    --background-color: rgb(245, 209, 218); /* Light pink background */
-    --text-color: #333;; /* dark plum color */
-    --text-content-color: #000000; /* Black text specifically for text content */
-    --text-content-background-color: #fcf4f6; /* off white background color     specifically for text content */
+    --background-color: #F5D1DA; /* Light pink background */
+    --text-color: #333; /* Dark text color */
+    --text-content-color: #000; /* Black text for text content */
+    --text-content-background-color: #fcf4f6; /* Light background for text content */
     --nav-background-color: #ffffff; /* White background for nav */
-    --nav-text-color: #333; /* Dark grey text for navigation */
+    --nav-text-color: #333; /* Dark text for navigation */
     --nav-hover-background-color: #951D6F; /* Dark pink for hover */
-    --button-color: #d3c6f7; /* button color */
-    --button-text-color: #333; /* color for button text */
-    --button-hover-color: #ffffff; /* Black text on hover */
+    --button-color: #d3c6f7; /* Button color */
+    --button-text-color: #333; /* Text color for buttons */
+    --button-hover-color: #ffffff; /* White text on hover */
+    --main-content-bg: #333; /* gray for light mode */
 }
+
 /* Dark mode styles */
 [data-theme="dark"] {
-    --background-color: #951D6F; /* Dark pink background */
-    --text-color: rgb(245, 209, 218); /* White text */
-    --text-content-color: #000000; /* Black text for text content in dark mode */
-    --text-content-background-color: rgb(245, 209, 218); /* pink background color specifically for text-content */
+    --background-color: #5a0f42; /* Darker background */
+    --text-color: #F5D1DA; /* Lighter text color */
+    --text-content-color: #333; /* White text for text content in dark mode */
+    --text-content-background-color: #f5d1da; /* Darker background for text content */
     --nav-background-color: #484141; /* Dark grey for nav */
-    --nav-text-color: #ffffff; /* White text for navigation */
+    --nav-text-color: #fff; /* White text for navigation */
     --nav-hover-background-color: #333; /* Light pink for hover */
-    --button-text-color: #333; /* color for button text */
-    --button-hover-color: #ffffff; /* Black text on hover */
+    --button-color: #d3c6f7; /* Button color remains */
+    --button-text-color: #333; /* Text color for buttons */
+    --button-hover-color: #fff; /* White text on hover */
+    --main-content-bg: #333; /* white for dark mode */
 }
 
 /* Styles for the main body content */
@@ -152,7 +157,7 @@ body, button, nav {
     align-items: stretch; /* Align items to stretch in their container */
     margin: 20px auto; /* Centering the grid horizontally */
     max-width: 1000px; /* Maximum width of the container */
-    background: #484141; /* dark background for the container */
+    background: var(--main-content-bg); /* Using variable for background */
     border-radius: 50px; /* Large border-radius to create a pill shape */
     box-shadow: 0 4px 8px rgba(0,0,0,0.2); /* Shadow for 3D effect */
     overflow: hidden; /* Ensures nothing spills out of the border-radius */
@@ -169,12 +174,14 @@ body, button, nav {
 .text-content {
     grid-area: text; /* Assigning the text content to the text area */
     padding: 20px; /* Padding around the text */
-    background-color: #fcf4f6; /* White background for the text area */
+    background-color: var(--text-content-background-color); /* Background color based on theme */
+    color: var(--text-content-color); /* Text color based on theme */
     border-radius: 42px; /* Slightly smaller radius for a snug fit */
     box-shadow: inset 0 2px 4px rgba(0,0,0,0.1); /* Inset shadow for depth */
     overflow: hidden;
-    color: var(--text-content-color); /* Using variable for text color */
     line-height: 2;
+    font-family: monospace; 
+    font-size: 1rem;
 }
 
 .image-content {
@@ -232,13 +239,13 @@ body, button, nav {
 }
 
 .image-wrapper img {
-    width: auto; /* Maintains aspect ratio */
+    width: 300px; /* Maintains aspect ratio */
     height: 100%; /* Fits to wrapper height */
     max-width: none; /* Overrides any max-width settings */
+    object-fit: cover;
 }
 
 /* Styles for the contact page */
-
 /* Styles for the chatbox-with-tail */
 main{
     display: flex; /* Enables the use of flexbox properties */
@@ -431,4 +438,56 @@ h2 a {
 h2 a:hover, h2 a:focus {
     text-decoration: underline; /* Adds underline on hover/focus */
     color: #4285F4; /* Changes color on hover/focus to a distinct blue */
+}
+/* Styles for responsive design and breakpoints */
+@media (max-width: 768px) {
+    body, button, nav ul li a {
+        font-size: 14px; /* Smaller font size for readability on smaller screens */
+    }
+
+    #Anais {
+        font-size: 2rem; /* Smaller title for limited space */
+    }
+
+    .main-content {
+        grid-template-columns: 1fr; /* Stacks elements vertically instead of side by side */
+        padding: 10px; /* Reduced padding */
+    }
+}
+@media (max-width: 768px) {
+    nav ul {
+        flex-direction: column; /* Stack nav items vertically */
+    }
+
+    nav ul li a {
+        padding: 8px; /* Adjust padding to make each link easier to tap */
+    }
+}
+@media (max-width: 768px) {
+    .image-content img, .git-container img, .codepen-container img {
+        width: 100%; /* Ensures images scale down to fit the container */
+        height: auto; /* Adjusts height automatically to maintain aspect ratio */
+    }
+
+    .image-wrapper {
+        height: auto; /* Adjusts wrapper height to be auto on smaller screens */
+    }
+}
+@media (max-width: 768px) {
+    .work-content {
+        grid-template-columns: 1fr; /* Changes the work grid to a single column layout */
+    }
+
+    .portfolio-grid {
+        grid-template-columns: 1fr; /* Adjusts portfolio items to stack vertically */
+    }
+}
+@media (max-width: 768px) {
+    form {
+        width: 90%; /* Makes the form take up more space for easier interaction */
+    }
+
+    button, input[type="text"], input[type="email"], input[type="tel"] {
+        padding: 12px; /* Increases padding for easier tapping */
+    }
 }
