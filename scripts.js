@@ -1,11 +1,12 @@
-/*Dark and light mode toggle script*/ 
+/* Dark and light mode toggle script */
 document.addEventListener('DOMContentLoaded', () => {
+    // Theme toggle
     const themeToggle = document.getElementById('theme-toggle');
     const iconSun = document.getElementById('icon-sun');
     const iconMoon = document.getElementById('icon-moon');
     const currentTheme = localStorage.getItem('theme');
 
-    // Set the initial theme and icon visibility based on saved theme or default
+    // Set the initial theme and icon visibility
     if (currentTheme === 'dark') {
         document.documentElement.setAttribute('data-theme', 'dark');
         iconSun.style.display = 'none';
@@ -19,7 +20,6 @@ document.addEventListener('DOMContentLoaded', () => {
     themeToggle.addEventListener('click', () => {
         let theme = document.documentElement.getAttribute('data-theme');
 
-        // Toggle the theme and icon visibility
         if (theme === 'dark') {
             document.documentElement.setAttribute('data-theme', 'light');
             localStorage.setItem('theme', 'light');
@@ -32,8 +32,19 @@ document.addEventListener('DOMContentLoaded', () => {
             iconMoon.style.display = 'block';
         }
     });
+
+    // Hamburger menu toggle
+    const navToggle = document.querySelector('.nav-toggle');
+    const navMenu = document.querySelector('nav ul');
+
+    if (navToggle && navMenu) {
+        navToggle.addEventListener('click', () => {
+            navMenu.classList.toggle('show');
+        });
+    }
 });
-// script for the emails and phone messages
+
+/* Contact field toggle */
 function showContactField(method) {
     var phoneInput = document.getElementById('phoneInput');
     var emailInput = document.getElementById('emailInput');
@@ -46,24 +57,20 @@ function showContactField(method) {
     }
 }
 
-// script for the lightbox model, which allows the image to be enlarged.
-document.querySelectorAll('.portfolio-grid .item img').forEach(item => {
-    item.addEventListener('click', function() {
-        document.getElementById('lightboxModal').style.display = "block";
-        document.getElementById('lightboxImg').src = this.src;
-        document.getElementById('caption').innerHTML = this.alt;
+/* Lightbox modal for portfolio images */
+document.addEventListener('DOMContentLoaded', () => {
+    document.querySelectorAll('.portfolio-grid .item img').forEach(item => {
+        item.addEventListener('click', function () {
+            document.getElementById('lightboxModal').style.display = "block";
+            document.getElementById('lightboxImg').src = this.src;
+            document.getElementById('caption').innerHTML = this.alt;
+        });
     });
-});
 
-// Get the <span> element that closes the modal
-document.querySelector('.close').addEventListener('click', function() {
-    document.getElementById('lightboxModal').style.display = "none";
-});
-
-// script for the nav to collapse on small screens
-const navToggle = document.querySelector('.nav-toggle');
-const navMenu = document.querySelector('nav ul');
-
-navToggle.addEventListener('click', () => {
-  navMenu.classList.toggle('show');
+    const closeModal = document.querySelector('.close');
+    if (closeModal) {
+        closeModal.addEventListener('click', function () {
+            document.getElementById('lightboxModal').style.display = "none";
+        });
+    }
 });
