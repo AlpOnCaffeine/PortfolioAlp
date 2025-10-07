@@ -337,6 +337,20 @@ form {
   margin-bottom: 10px;
 }
 
+/* Contact form icons */
+form label img {
+  width: 20px;              /* size down the icon */
+  height: 20px;
+  vertical-align: middle;   /* align with text */
+  margin-right: 6px;        /* small space before text */
+  filter: brightness(0) invert(0); /* keeps them visible in light mode */
+}
+
+/* Optional: adjust icons in dark mode for better visibility */
+[data-theme="dark"] form label img {
+  filter: brightness(1.8);  /* makes icons pop against dark background */
+}
+
 label {
   display: block;
   margin-bottom: 5px;
