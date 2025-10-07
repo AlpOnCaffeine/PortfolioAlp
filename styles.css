@@ -422,15 +422,16 @@ button:hover {
   }
 
   .main-content {
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr 1fr;
     grid-template-areas:
       "title"
       "text"
       "image";
     gap: 1rem;
-    margin: 1rem;
+    margin: 1rem auto;
     padding: 1rem;
-    border-radius: 20px;
+    max-width: 90%;
+    border-radius: 30px;
   }
 
   .text-content,
