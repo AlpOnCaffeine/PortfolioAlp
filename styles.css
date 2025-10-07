@@ -485,56 +485,72 @@ h2 a:hover, h2 a:focus {
     text-decoration: underline; /* Adds underline on hover/focus */
     color: #4285F4; /* Changes color on hover/focus to a distinct blue */
 }
+
 /* Styles for responsive design and breakpoints */
 @media (max-width: 768px) {
-    body, button, nav ul li a {
-        font-size: 14px; /* Smaller font size for readability on smaller screens */
-    }
 
-    #Anais {
-        font-size: 2rem; /* Smaller title for limited space */
-    }
+  body, button, nav ul li a {
+    font-size: 14px;
+  }
 
-    .main-content {
-        grid-template-columns: 1fr; /* Stacks elements vertically instead of side by side */
-        padding: 10px; /* Reduced padding */
-    }
-}
-@media (max-width: 768px) {
-    nav ul {
-        flex-direction: column; /* Stack nav items vertically */
-    }
+  #Anais {
+    font-size: 2rem;
+  }
 
-    nav ul li a {
-        padding: 8px; /* Adjust padding to make each link easier to tap */
-    }
-}
-@media (max-width: 768px) {
-    .image-content img, .git-container img, .codepen-container img {
-        width: 100%; /* Ensures images scale down to fit the container */
-        height: auto; /* Adjusts height automatically to maintain aspect ratio */
-    }
+  /* Navigation stacks vertically */
+  nav ul {
+    flex-direction: column;
+    align-items: center;
+  }
 
-    .image-wrapper {
-        height: auto; /* Adjusts wrapper height to be auto on smaller screens */
-    }
-}
-@media (max-width: 768px) {
-    .work-content {
-        grid-template-columns: 1fr; /* Changes the work grid to a single column layout */
-        gap: 1.5rem;
-    }
+  nav ul li a {
+    padding: 8px;
+  }
 
-    .portfolio-grid {
-        grid-template-columns: 1fr; /* Adjusts portfolio items to stack vertically */
-    }
-}
-@media (max-width: 768px) {
-    form {
-        width: 90%; /* Makes the form take up more space for easier interaction */
-    }
+  /* Main content stacks vertically */
+  .main-content {
+    grid-template-columns: 1fr;
+    padding: 10px;
+  }
 
-    button, input[type="text"], input[type="email"], input[type="tel"] {
-        padding: 12px; /* Increases padding for easier tapping */
-    }
+  /* Work section becomes single column */
+  .work-content {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    justify-items: center;
+  }
+
+  /* Portfolio section also stacks vertically */
+  .portfolio-grid {
+    grid-auto-flow: row;
+    grid-template-columns: 1fr;
+  }
+
+  /* Make all project images scale naturally */
+  .image-wrapper {
+    width: 90%;
+    height: auto;
+  }
+
+  .image-wrapper img,
+  .git-container img,
+  .codepen-container img,
+  .YouTube-container img {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+  }
+
+  /* Contact form expands for easier tapping */
+  form {
+    width: 90%;
+  }
+
+  button,
+  input[type="text"],
+  input[type="email"],
+  input[type="tel"] {
+    padding: 12px;
+    font-size: 1rem;
+  }
 }
