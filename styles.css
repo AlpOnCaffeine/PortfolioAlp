@@ -105,8 +105,10 @@ nav ul li a {
 
 nav ul li a:hover,
 nav ul li a:focus {
-  background-color: var(--nav-hover-background-color);
-  color: var(--button-hover-color);
+  background-color: transparent;       /* removes background highlight */
+  color: var(--nav-hover-background-color);  /* makes text turn pink/purple */
+  text-decoration: underline;          /* optional for accessibility */
+  transition: color 0.3s ease;
 }
 
 /* Theme toggle button */
@@ -142,7 +144,7 @@ footer {
 }
 
 /* ===========================================
-   MAIN CONTENT
+   Home Page MAIN CONTENT
 =========================================== */
 #Anais {
   font-family: "Bungee Shade", serif;
@@ -207,7 +209,7 @@ footer {
 =========================================== */
 .works {
   text-align: left;
-  margin: 20px auto 20px 50px;
+  margin: 20px auto 20px 20px;
 }
 
 .work-content {
@@ -226,6 +228,14 @@ footer {
   text-align: center;
   width: 100%;
   max-width: 300px;
+}
+
+#portfolio{
+font-family: "Bungee Shade", serif;
+  font-size: 3rem;
+  grid-area: title;
+  text-align: center;
+  letter-spacing: 2px;
 }
 
 .git-container img,
