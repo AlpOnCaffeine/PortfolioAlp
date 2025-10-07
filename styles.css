@@ -47,9 +47,9 @@ html, body {
   --text-color: #F5D1DA;
   --text-content-color: #333;
   --text-content-background-color: #f5d1da;
-  --nav-background-color: #484141;
-  --nav-text-color: #fff;
-  --nav-hover-background-color: #333;
+  --nav-background-color: #2b1b27;
+  --nav-text-color: #d3c6f7;              /* soft lavender text color */
+  --nav-hover-background-color: #d3c6f7; /* underline/hover color matches */
   --button-color: #d3c6f7;
   --button-text-color: #333;
   --button-hover-color: #fff;
@@ -119,6 +119,7 @@ nav ul li a::after {
 
 nav ul li a:hover::after {
   width: 100%;
+  box-shadow: 0 0 6px #d3c6f7;
 }
 
 /* Theme toggle button */
