@@ -76,9 +76,9 @@ nav {
   border-radius: 5px;
 }
 
-/* By default, hide the hamburger on large screens */
+/* Desktop: nav links visible, hamburger hidden */
 .nav-toggle {
-  display: none;
+  display: none;                         /* HIDE by default on big screens */
   background: var(--button-color);
   color: var(--text-color);
   border: none;
@@ -96,7 +96,6 @@ nav ul {
 }
 
 nav ul li a {
-  display: block;
   padding: 10px 20px;
   color: var(--nav-text-color);
   text-decoration: none;
