@@ -407,32 +407,52 @@ button:hover {
   border-radius: 8px;
 }
 
+/* ===========================================
+   RÉSUMÉ & CASE STUDY SECTION
+=========================================== */
 .case-study-container {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  align-items: flex-start;
   gap: 2rem;
   text-align: center;
+  margin-top: 2rem;
 }
 
 .case-study-container .image-wrapper {
-  width: 250px;
+  width: 260px;
+  height: auto;             /* allows image + text to expand naturally */
+  overflow: visible;        /* prevent clipping */
+  display: flex;
+  flex-direction: column;   /* stack image and link */
+  align-items: center;
+  justify-content: center;
+  gap: 0.9rem;              /* space between image and link */
+  border-radius: 12px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.case-study-container img {
-  width: 600px;
-  max-width: 100%;
+.case-study-container .image-wrapper:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.case-study-container .image-wrapper img {
+  width: 100%;
   height: auto;
+  max-height: none;
   border-radius: 8px;
   transition: transform 0.3s ease;
 }
 
-.case-study-container img:hover {
+.case-study-container .image-wrapper img:hover {
   transform: scale(1.05);
 }
 
 .case-study-container h3 {
-  margin-left: 0.75rem;   /* space between image and link */
+  margin: 0;
+  text-align: center;
   font-size: 1.1rem;
 }
 
@@ -443,7 +463,7 @@ button:hover {
 }
 
 .case-study-container h3 a:hover {
-  color: var(--nav-hover-background-color); /* lavender/pink hover */
+  color: var(--nav-hover-background-color);
   text-decoration: underline;
 }
 
