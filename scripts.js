@@ -59,3 +59,11 @@ document.querySelectorAll('.portfolio-grid .item img').forEach(item => {
 document.querySelector('.close').addEventListener('click', function() {
     document.getElementById('lightboxModal').style.display = "none";
 });
+
+// script for the nav to collapse on small screens
+const navToggle = document.querySelector('.nav-toggle');
+const navMenu = document.querySelector('nav ul');
+
+navToggle.addEventListener('click', () => {
+  navMenu.classList.toggle('show');
+});
