@@ -64,7 +64,7 @@ header {
   justify-content: space-between;
   align-items: center;
   background-color: var(--background-color);
-  padding: 0 20px;
+  padding: 0.5rem 1rem;
 }
 
 .logo img {
@@ -74,6 +74,18 @@ header {
 nav {
   background-color: var(--nav-background-color);
   border-radius: 5px;
+}
+
+/* By default, hide the hamburger on large screens */
+.nav-toggle {
+  display: none;
+  background: var(--button-color);
+  color: var(--text-color);
+  border: none;
+  font-size: 1.5rem;
+  padding: 0.5rem 0.75rem;
+  border-radius: 4px;
+  cursor: pointer;
 }
 
 nav ul {
@@ -460,6 +472,37 @@ button:hover {
   footer {
     background-size: 80px 80px;
     padding: 12px 0;
+  }
+}
+
+/* ==========================
+   Responsive for small screens
+   ========================== */
+@media (max-width: 768px) {
+  /* Show the hamburger button */
+  .nav-toggle {
+    display: block;
+  }
+
+  /* Hide the menu by default on small screens */
+  nav ul {
+    display: none;
+    flex-direction: column;
+    background-color: var(--nav-background-color);
+    border-radius: 6px;
+    padding: 0.5rem 0;
+    margin-top: 0.5rem;
+  }
+
+  /* Show the menu when .show class is added */
+  nav ul.show {
+    display: flex;
+  }
+
+  nav ul li a {
+    padding: 0.5rem 1rem;
+    text-align: center;
+    display: block;
   }
 }
 
