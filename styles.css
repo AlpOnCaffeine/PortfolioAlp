@@ -25,6 +25,7 @@ body, .container, .content {
 .content {
     flex: 1; /* Takes up all available space pushing the footer to the bottom */
 }
+
 /*  Styles for the footer */
 footer {
     width: 100%; /* Ensures footer takes full width of the viewport */
@@ -553,4 +554,23 @@ h2 a:hover, h2 a:focus {
     padding: 12px;
     font-size: 1rem;
   }
+
+/* Footer Responsive for Smaller Screens */
+/* Tablet footer adjustments */
+@media (max-width: 768px) and (min-width: 600px) {
+  footer {
+    background-size: 120px 120px;   /* not as tiny as mobile, smoother transition */
+    padding: 15px 0;                /* slightly less padding so it doesn’t stretch */
+    background-repeat: repeat;      /* ensure tiling looks clean */
+  }
+}
+
+/* Mobile phones */
+@media (max-width: 599px) {
+  footer {
+    background-size: 80px 80px;     /* slightly larger pattern for small screens */
+    padding: 10px 0;
+  }
+}
+
 }
