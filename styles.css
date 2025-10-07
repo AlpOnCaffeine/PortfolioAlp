@@ -65,6 +65,7 @@ header {
   align-items: center;
   background-color: var(--background-color);
   padding: 0.5rem 1rem;
+  position: relative; /* Needed for the drop down menu */
 }
 
 .logo img {
@@ -76,9 +77,9 @@ nav {
   border-radius: 5px;
 }
 
-/* Desktop: nav links visible, hamburger hidden */
+/* hamburger button */
 .nav-toggle {
-  display: none;                         /* HIDE by default on big screens */
+  display: none;                 /* hidden on big screens */
   background: var(--button-color);
   color: var(--text-color);
   border: none;
@@ -472,18 +473,54 @@ button:hover {
     background-size: 80px 80px;
     padding: 12px 0;
   }
+  /* ========== Mobile view ========== */
+@media (max-width: 768px) {
+
+  /* Show hamburger on small screens */
+  .nav-toggle {
+    display: block;
+  }
+
+  /* Hide nav links by default */
+  nav ul {
+    display: none;
+    flex-direction: column;
+    background-color: var(--nav-background-color);
+    border-radius: 6px;
+    margin-top: 0.5rem;
+    padding: 0.5rem 0;
+    position: absolute;
+    right: 1rem;
+    top: 60px;                /* drops below the header */
+    min-width: 150px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+  }
+
+  /* Show links when toggled */
+  nav ul.show {
+    display: flex;
+  }
+
+  nav ul li a {
+    padding: 0.75rem 1rem;
+    text-align: left;
+  }
 }
 
 /* ==========================
    Responsive for small screens
    ========================== */
+/* ========== Responsive NAVIGATION ========== */
+
+/* Show hamburger on tablets/phones */
 @media (max-width: 768px) {
-  /* Show the hamburger button */
   .nav-toggle {
     display: block;
+    position: relative;
+    z-index: 1000;
   }
 
-  /* Hide the menu by default on small screens */
+  /* Hide the nav list by default on small screens */
   nav ul {
     display: none;
     flex-direction: column;
@@ -491,63 +528,51 @@ button:hover {
     border-radius: 6px;
     padding: 0.5rem 0;
     margin-top: 0.5rem;
+    position: absolute;
+    right: 1rem;
+    top: 60px;                     /* sits just below header */
+    min-width: 150px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.2);
   }
 
-  /* Show the menu when .show class is added */
+  /* When JS toggles this class the menu appears */
   nav ul.show {
     display: flex;
   }
 
   nav ul li a {
-    padding: 0.5rem 1rem;
-    text-align: center;
+    padding: 0.75rem 1rem;
+    text-align: left;
     display: block;
-  }
-}
-
-/* ----- Tablets ----- */
-@media (min-width: 600px) and (max-width: 1023px) {
-
-  #Anais {
-    font-size: 2.2rem;
   }
 
   header {
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 0.5rem;
+  }
+}
+
+/* Tablet – optional refinements */
+@media (min-width: 600px) and (max-width: 1023px) {
+  header {
     flex-direction: row;
     justify-content: space-between;
-    padding: 0 20px;
   }
 
   nav ul {
     flex-direction: row;
     gap: 1rem;
+    position: static;
+    display: flex;                 /* visible on tablet and up */
+    background: none;
+    box-shadow: none;
+    margin: 0;
+    padding: 0;
   }
 
-  .main-content {
-    grid-template-columns: 1fr 1fr;
-    grid-template-areas:
-      "title title"
-      "text image";
-    margin: 1rem auto;
-    padding: 1rem;
-    max-width: 90%;
-    border-radius: 30px;
+  .nav-toggle {
+    display: none;                 /* hide burger on tablet+ */
   }
-
-  .work-content {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 1.5rem;
-    justify-items: center;
-  }
-
-  .portfolio-grid {
-    grid-auto-flow: column;
-    grid-auto-columns: minmax(200px, 1fr);
-    overflow-x: auto;
-  }
-
-  footer {
-    background-size: 120px 120px;
-    padding: 15px 0;
-  }
+}
 }
