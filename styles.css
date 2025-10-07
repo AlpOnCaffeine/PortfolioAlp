@@ -92,23 +92,33 @@ nav {
 nav ul {
   display: flex;
   list-style: none;
+  gap: 2rem;
   margin: 0;
   padding: 0;
 }
 
 nav ul li a {
-  padding: 10px 20px;
+  position: relative;
   color: var(--nav-text-color);
   text-decoration: none;
-  transition: background-color 0.3s ease, color 0.3s ease;
+  padding: 0.5rem 0.75rem; 
+  font-size: 1rem;
+  display: inline-block;
 }
 
-nav ul li a:hover,
-nav ul li a:focus {
-  background-color: transparent;       /* removes background highlight */
-  color: var(--nav-hover-background-color);  /* makes text turn pink/purple */
-  text-decoration: underline;          /* optional for accessibility */
-  transition: color 0.3s ease;
+nav ul li a::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0%;
+  height: 2px;
+  background-color: var(--nav-hover-background-color);
+  transition: width 0.3s ease;
+}
+
+nav ul li a:hover::after {
+  width: 100%;
 }
 
 /* Theme toggle button */
