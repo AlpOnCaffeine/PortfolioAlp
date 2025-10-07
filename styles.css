@@ -394,11 +394,32 @@ input::placeholder {
   border-radius: 8px;              /* optional rounded corners */
 }
 
-/*.item img {
-    width: 100%;
-    height: auto;
-    display: block;
-}*/
+/* CASE STUDY STYLES */
+.case-study-container {
+  text-align: center;
+}
+
+.case-study-container img {
+  width: 600px; 
+  max-width: 100%;      /* keeps it responsive on small screens */
+  height: auto;         /* preserves the image’s aspect ratio */
+  border-radius: 8px;   /* optional rounded corners */
+  transition: transform 0.3s ease;
+}
+
+.case-study-container img:hover {
+  transform: scale(1.05);
+}
+
+.case-study-container h2 a {
+  text-decoration: none;
+  color: #ff2f92;      /* matches your brand pink */
+  font-weight: 600;
+}
+
+.case-study-container h2 a:hover {
+  text-decoration: underline;
+}
 
 /* Styles for the lightbox model that allows img to be enlarged. */
 .lightbox-modal {
