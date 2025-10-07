@@ -38,13 +38,6 @@ footer {
     color: white;
 }
 
-@media (max-width: 768px) {
-    footer {
-        background-size: 50px 50px; /* Smaller pattern size on smaller screens */
-    }
-}
-
-
 body {
     font-family: Arial, sans-serif; /* This can be changed to your preferred font */
     margin: 0;
@@ -487,53 +480,82 @@ h2 a:hover, h2 a:focus {
     color: #4285F4; /* Changes color on hover/focus to a distinct blue */
 }
 
-/* Styles for responsive design and breakpoints */
-@media (max-width: 768px) {
+/* ==========================================
+   Responsive Adjustments
+   ========================================== */
 
-  body, button, nav ul li a {
+/* Phones: up to 599px wide */
+@media (max-width: 599px) {
+
+  html, body {
     font-size: 14px;
   }
 
   #Anais {
-    font-size: 2rem;
+    font-size: 1.8rem;
+    line-height: 1.2;
   }
 
-  /* Navigation stacks vertically */
+  /* ----- Header & Nav ----- */
+  header {
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+    gap: 0.5rem;
+  }
+
   nav ul {
     flex-direction: column;
     align-items: center;
+    gap: 0.5rem;
+    padding: 0;
+    margin: 0;
   }
 
   nav ul li a {
-    padding: 8px;
+    padding: 8px 12px;
   }
 
-  /* Main content stacks vertically */
+  /* ----- Main content stacks vertically ----- */
   .main-content {
+    display: grid;
     grid-template-columns: 1fr;
-    padding: 10px;
+    grid-template-areas:
+      "title"
+      "text"
+      "image";
+    gap: 1rem;
+    margin: 1rem;
+    padding: 1rem;
+    border-radius: 20px;
   }
 
-  /* Work section becomes single column */
+  .text-content,
+  .image-content {
+    max-height: none;
+    width: 100%;
+    padding: 1rem;
+  }
+
+  .image-content img {
+    width: 100%;
+    height: auto;
+    max-height: none;
+    border-radius: 10px;
+  }
+
+  /* ----- Works section single column ----- */
   .work-content {
     grid-template-columns: 1fr;
     gap: 1.5rem;
     justify-items: center;
+    padding: 0 1rem;
   }
 
-  /* Portfolio section also stacks vertically */
-  .portfolio-grid {
-    grid-auto-flow: row;
-    grid-template-columns: 1fr;
+  .work-content > div {
+    max-width: 90%;
   }
 
-  /* Make all project images scale naturally */
-  .image-wrapper {
-    width: 90%;
-    height: auto;
-  }
-
-  .image-wrapper img,
   .git-container img,
   .codepen-container img,
   .YouTube-container img {
@@ -542,35 +564,88 @@ h2 a:hover, h2 a:focus {
     object-fit: contain;
   }
 
-  /* Contact form expands for easier tapping */
+  /* ----- Portfolio scrolls vertically ----- */
+  .portfolio-grid {
+    grid-auto-flow: row;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    overflow-x: visible;
+  }
+
+  .portfolio-grid .item img {
+    height: auto;
+  }
+
+  /* ----- Contact form more touch-friendly ----- */
   form {
     width: 90%;
+    padding: 1rem;
   }
 
-  button,
-  input[type="text"],
-  input[type="email"],
-  input[type="tel"] {
-    padding: 12px;
+  input,
+  button {
     font-size: 1rem;
+    padding: 12px;
   }
 
-/* Footer Responsive for Smaller Screens */
-/* Tablet footer adjustments */
-@media (max-width: 768px) and (min-width: 600px) {
+  /* ----- Footer ----- */
   footer {
-    background-size: 120px 120px;   /* not as tiny as mobile, smoother transition */
-    padding: 15px 0;                /* slightly less padding so it doesn’t stretch */
-    background-repeat: repeat;      /* ensure tiling looks clean */
+    background-size: 80px 80px;
+    padding: 12px 0;
+    text-align: center;
   }
 }
 
-/* Mobile phones */
-@media (max-width: 599px) {
+/* Tablets: 600px – 1023px */
+@media (min-width: 600px) and (max-width: 1023px) {
+
+  #Anais {
+    font-size: 2.2rem;
+  }
+
+  header {
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 0 20px;
+  }
+
+  nav ul {
+    flex-direction: row;
+    gap: 1rem;
+  }
+
+  .main-content {
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas:
+      "title title"
+      "text image";
+    margin: 1rem auto;
+    padding: 1rem;
+    max-width: 90%;
+    border-radius: 30px;
+  }
+
+  .text-content,
+  .image-content {
+    max-height: none;
+  }
+
+  .work-content {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+    justify-items: center;
+  }
+
+  .portfolio-grid {
+    grid-auto-flow: column;
+    grid-auto-columns: minmax(200px, 1fr);
+    overflow-x: auto;
+  }
+
   footer {
-    background-size: 80px 80px;     /* slightly larger pattern for small screens */
-    padding: 10px 0;
+    background-size: 120px 120px;
+    padding: 15px 0;
   }
 }
 
-}
+
