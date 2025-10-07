@@ -165,7 +165,7 @@ footer {
   background: var(--main-content-bg);
   border-radius: 50px;
   box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-  overflow: hidden;
+  padding: 20px;
 }
 
 .text-content,
