@@ -174,7 +174,8 @@ footer {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  max-height: 600px;
+  padding: 20px;
+  box-sizing: border-box;
 }
 
 .text-content {
@@ -195,8 +196,9 @@ footer {
 }
 
 .image-content img {
-  width: auto;
-  max-height: 400px;
+  width: 100%;
+  height: auto;       /* keeps image responsive */
+  max-height: 400px;  /* keep an upper bound for image, optional */
   border-radius: 10px;
 }
 
