@@ -203,15 +203,21 @@ body, button, nav {
 }
 .work-content {
     display: grid;
-    grid-template-columns: repeat(2, 1fr); /* Creates two columns of equal width */
-    gap: 20px; /* Space between columns */
-    padding: 20px; /* Padding around the grid */
+    grid-template-columns: repeat(3, 1fr); /* Creates two columns of equal width */
+    gap: 2rem; /* Space between columns */
+    padding: 0 1rem; /* Padding around the grid */
     align-items: start; /* Aligns items to the start of each cell */
+    justify-content: center; /* Centers the content horizontally */ 
     max-width: 1200px; /* Maximum width of the grid container */
-    margin: auto; /* Centers the grid in the middle of the page */
-    text-align: center;
+    margin: 2 rem auto; /* Centers the grid in the middle of the page */
+    text-align: center; /* Aligns the text center */
 }
-
+/* Container for each card */
+.work-content > div {
+  text-align: center;
+  width: 100%;
+  max-width: 300px;                         /* optional fixed max width */
+}
 .grid-item {
     background: #f9f9f9; /* Light background color for each grid item */
     padding: 20px; /* Padding inside each grid item */
@@ -219,19 +225,23 @@ body, button, nav {
     box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* Subtle shadow for depth */
 }
 
-.git-container img, .codepen-container img {
+.git-container img, .codepen-container img, .YouTube-container img{
     width: 100%; /* Ensures images take full width of the container */
     height: 300px; /* Fixed height for all images */
     object-fit: cover; /* Covers the area without distorting aspect ratio */
     border-radius: 5px; /* Slightly rounded corners */
 }
 
-.git-container, .codepen-container {
+.git-container, .codepen-container, .YouTube-container{
     margin-bottom: 20px; /* Adds bottom margin for spacing between content */
 }
 
 .image-wrapper {
-    height: 300px; /* Fixed height for all wrappers */
+    width: 220px;
+    height: 220px;
+    margin: 0 auto;
+    border-radius: 8px;
+    transition: transform 0.3s ease;
     overflow: hidden; /* Hides parts of the image that overflow */
     display: flex;
     justify-content: center;
@@ -239,10 +249,10 @@ body, button, nav {
 }
 
 .image-wrapper img {
-    width: 300px; /* Maintains aspect ratio */
-    height: 100%; /* Fits to wrapper height */
-    max-width: none; /* Overrides any max-width settings */
-    object-fit: cover;
+    max-width: 100%; /* Maintains aspect ratio */
+    max-height: 100%; /* Fits to wrapper height */
+    object-fit: contain;
+    object-position: center;
 }
 
 /* Styles for the contact page */
@@ -432,6 +442,8 @@ input::placeholder {
 h2 a {
     text-decoration: none; /* Removes the underline by default */
     color: inherit; /* Inherits the color from the parent element */
+    font-weight: 600;
+    font-size: 1.2 rem;
     transition: color 0.3s ease, text-decoration 0.3s ease; /* Smooth transition for color and decoration */
 }
 
@@ -476,6 +488,7 @@ h2 a:hover, h2 a:focus {
 @media (max-width: 768px) {
     .work-content {
         grid-template-columns: 1fr; /* Changes the work grid to a single column layout */
+        gap: 1.5rem;
     }
 
     .portfolio-grid {
