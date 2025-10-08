@@ -77,7 +77,7 @@ nav {
   border-radius: 5px;
 }
 
-/* hamburger button */
+/* =========== hamburger button ============= */
 .nav-toggle {
   display: none;                 /* hidden on big screens */
   background: var(--button-color);
@@ -85,8 +85,27 @@ nav {
   border: none;
   font-size: 1.5rem;
   padding: 0.5rem 0.75rem;
-  border-radius: 4px;
+  border-radius: 6px;
   cursor: pointer;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+/* Hover state */
+.nav-toggle:hover {
+  background: var(--nav-hover-background-color);
+  color: var(--button-hover-color);
+}
+
+/* Dark mode override */
+[data-theme="dark"] .nav-toggle {
+  background: #d3c6f7;          /* light lavender background */
+  color: #5a0f42;               /* your dark plum text */
+  box-shadow: 0 0 8px rgba(243, 209, 218, 0.6); /* soft glow */
+}
+
+[data-theme="dark"] .nav-toggle:hover {
+  background: #f5d1da;          /* soft pink */
+  color: #2b1b27;               /* darker contrast text */
 }
 
 nav ul {
