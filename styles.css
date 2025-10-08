@@ -393,6 +393,7 @@ button:hover {
   gap: 1rem;
   overflow-x: auto;
   padding: 1rem 0;
+  margin: auto 20px;
 }
 
 .portfolio-grid .item {
@@ -465,6 +466,75 @@ button:hover {
 .case-study-container h3 a:hover {
   color: var(--nav-hover-background-color);
   text-decoration: underline;
+}
+
+/*======================================
+    Creations Section 
+========================================*/
+.creations-section {
+  padding: 3rem 1rem;
+ 
+}
+
+.creations-section h2 {
+  text-align: left;
+  margin-bottom: 2rem;
+  font-size: 2rem;
+}
+
+/* ================================
+    Lightbox
+=====================================*/
+/* Lightbox Modal Overlay */
+.lightbox-modal {
+  display: none;                    /* hidden until JS sets display:block */
+  position: fixed;                  /* keeps it in viewport, not in document flow */
+  z-index: 9999;                    /* sits on top of everything */
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;                   /* scroll if image taller than screen */
+  background-color: rgba(0, 0, 0, 0.9);  /* translucent black overlay */
+  justify-content: center;          /* centers the content horizontally */
+  align-items: center;              /* centers the content vertically */
+}
+
+/* Make the modal use flexbox centering */
+.lightbox-modal.open {
+  display: flex;
+}
+
+/* Modal Image */
+.lightbox-modal img.modal-content {
+  max-width: 90%;
+  max-height: 90%;
+  border-radius: 8px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.6);
+}
+
+/* Close button (the ×) */
+.lightbox-modal .close {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  color: #fff;
+  font-size: 2.5rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.lightbox-modal .close:hover {
+  color: #f5d1da; /* matches your light theme accent */
+}
+
+/* Caption */
+.lightbox-modal #caption {
+  color: #ccc;
+  margin-top: 1rem;
+  text-align: center;
+  font-size: 1rem;
 }
 
 /* ===========================================
@@ -561,6 +631,7 @@ button:hover {
     background-size: 80px 80px;
     padding: 12px 0;
   }
+}
   /* ========== Mobile view ========== */
 @media (max-width: 768px) {
 
@@ -662,5 +733,4 @@ button:hover {
   .nav-toggle {
     display: none;                 /* hide burger on tablet+ */
   }
-}
 }

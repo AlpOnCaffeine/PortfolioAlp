@@ -33,7 +33,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    // Hamburger menu toggle
+    // ====== Hamburger menu toggle ===========
     const navToggle = document.querySelector('.nav-toggle');
     const navMenu = document.querySelector('nav ul');
 
@@ -42,6 +42,28 @@ document.addEventListener('DOMContentLoaded', () => {
             navMenu.classList.toggle('show');
         });
     }
+});
+
+// =========== Lightbox ===========
+const modal = document.getElementById('lightboxModal');
+const modalImg = document.getElementById('lightboxImg');
+const caption = document.getElementById('caption');
+const closeModal = document.querySelector('.close');
+
+document.querySelectorAll('.portfolio-grid img').forEach(img => {
+  img.addEventListener('click', () => {
+    modal.classList.add('open');   // use flex centering
+    modalImg.src = img.src;
+    caption.textContent = img.alt;
+  });
+});
+
+closeModal.addEventListener('click', () => {
+  modal.classList.remove('open');
+});
+
+modal.addEventListener('click', (e) => {
+  if (e.target === modal) modal.classList.remove('open');
 });
 
 /* Contact field toggle */
@@ -56,21 +78,3 @@ function showContactField(method) {
         phoneInput.style.display = 'none';
     }
 }
-
-/* Lightbox modal for portfolio images */
-document.addEventListener('DOMContentLoaded', () => {
-    document.querySelectorAll('.portfolio-grid .item img').forEach(item => {
-        item.addEventListener('click', function () {
-            document.getElementById('lightboxModal').style.display = "block";
-            document.getElementById('lightboxImg').src = this.src;
-            document.getElementById('caption').innerHTML = this.alt;
-        });
-    });
-
-    const closeModal = document.querySelector('.close');
-    if (closeModal) {
-        closeModal.addEventListener('click', function () {
-            document.getElementById('lightboxModal').style.display = "none";
-        });
-    }
-});
